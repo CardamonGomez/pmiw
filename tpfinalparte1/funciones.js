@@ -11,3 +11,20 @@ textAlign(CENTER,CENTER);
 textSize(30);
 text(botonComenzar.texto,botonComenzar.xTxComenzar,botonComenzar.yTxComenzar);
 } 
+
+function clicSobre(x, y, ancho, alto) {
+
+  if (
+    mouseX >= x &&
+    mouseX <= x + ancho &&
+    mouseY >= y &&
+    mouseY <= y + alto
+  ) {
+
+    return true;
+
+  } else {
+
+    return false;
+  }
+}
