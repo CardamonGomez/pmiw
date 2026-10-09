@@ -1,5 +1,5 @@
 const pantallaInicio = -1;
-
+//gshafkdjadfh//
 let imgInicio;
 let imgUno;
 let imgDos;
