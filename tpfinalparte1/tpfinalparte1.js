@@ -1,3 +1,6 @@
+//Fiorella Jazmin Furnel- Cardamon Gomez- comision 3
+https://youtu.be/sRhledWiciw // fiorella
+  // cardamon
 const pantallaInicio = -1;
 const pantallaCreditos =-2
 let estadoActual = pantallaInicio;
