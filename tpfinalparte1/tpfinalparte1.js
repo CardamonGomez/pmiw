@@ -1,6 +1,6 @@
 //Fiorella Jazmin Furnel- Cardamon Gomez- comision 3
-https://youtu.be/sRhledWiciw // fiorella
-  // cardamon
+//https://youtu.be/sRhledWiciw // fiorella
+//https://youtu.be/qxi5xQedabY  // cardamon
 const pantallaInicio = -1;
 const pantallaCreditos =-2
 let estadoActual = pantallaInicio;
@@ -66,16 +66,7 @@ function draw() {
   } else {
   dibujarHistoria();
   }
-  //AYUDAS
-  push();
-  textAlign(LEFT);
-  noFill();
-  stroke(255, 0, 0);
-  rect(0, 0, width, height);
-  text(mouseX+","+ mouseY, 0, 20);
-  pop();
 }
-
 
 
 function mousePressed() {
@@ -86,12 +77,7 @@ function mousePressed() {
     }
   }
  
-  if (estadoActual === 0) {
-    if (clicSobre(botonUnico.vertices[0].x, botonUnico.vertices[0].y,  width - width / 2, 46)) {
-      estadoActual = 1;
-    }
-  }
-  else if (historia[estadoActual] && historia[estadoActual].unicaOpcion) {
+  if (historia[estadoActual] && historia[estadoActual].unicaOpcion) {
     if (clicSobre(botonUnico.vertices[0].x, botonUnico.vertices[0].y, width - width / 2, 46)) {
       
       estadoActual = historia[estadoActual].unicaOpcion.siguiente;
