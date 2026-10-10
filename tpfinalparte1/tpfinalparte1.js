@@ -3,8 +3,8 @@ const pantallaCreditos =-2
 let estadoActual = pantallaInicio;
 
 let img=[];
-let imgInicio;
 let imgCreditos;
+let imgInicio;
 
 let botonComenzar;
 let botonA;
@@ -20,14 +20,27 @@ let historia;
 
 diccionarioDeHistoria();
 
+let frameMoon=1;
+let frameFio=1;
+let moon=[];
+let fio=[];
+let posicionCreditos=300;
+let sonido;
 
 function preload() {
-  imgInicio = loadImage("assets/img-1.jpg");
+imgInicio=loadImage("assets/inicio.png");
   imgCreditos= loadImage ("assets/img-2.jpeg");
   for ( let i =0;i <= 13; i++){
     let path= "assets/img" + i +".jpeg";
     img[i]= loadImage(path);
   }
+    for(let i=1; i<=6; i++){
+      moon[i]=loadImage("assets/moon"+i+".png");
+    }
+    for(let i=1;i<=9;i++){
+      fio[i]=loadImage("assets/fio"+i+".png");
+    }
+  sonido=loadSound("assets/sonido.mp3");
 }
 
 function setup() {
@@ -66,6 +79,7 @@ function mousePressed() {
   if (estadoActual === pantallaInicio) {
     if (clicSobre(botonComenzar.vertices[0].x, botonComenzar.vertices[0].y, width/2, 70)) {
       estadoActual = 0;
+      sonido.loop();
     }
   }
  
@@ -99,5 +113,4 @@ function mousePressed() {
       estadoActual = historia[estadoActual].opcionE.siguiente;
     }
   }
-
 }

@@ -1,5 +1,6 @@
+
 function dibujarPantallaInicio() {
-  image(imgInicio, 0, 0);
+image(imgInicio,0,0,width,height);
   fill(amarillo);
   noStroke();
   beginShape();
@@ -11,12 +12,51 @@ function dibujarPantallaInicio() {
   textAlign(CENTER, CENTER);
   textSize(30);
   text(botonComenzar.texto, botonComenzar.xTxComenzar, botonComenzar.yTxComenzar);
-  textSize(45);
-  text("Un dia en la vida de una abeja", width/2, height/2);
 }
 
 function dibujarPantallaCreditos() {
   image(imgCreditos, 0, 0, width, height);
+  if(frameCount%15==0){
+    frameMoon++;
+    if(frameMoon>6){
+      frameMoon=1;
+    }
+    frameFio++;
+    if(frameFio>9){
+      frameFio=1;
+    }
+  }
+  image(moon[frameMoon],0,200,300,300);
+  image(fio[frameFio],530,220,250,250);
+fill(67,44,20);
+  textAlign(CENTER);
+  let y = posicionCreditos;
+  textSize(35);
+  text("CRÉDITOS", width/2, y);
+
+  textSize(20);
+  text("Trabajo Final - Parte 1", width/2,y+ 120);
+
+  textSize(16);
+  text("Programación para Medios Interactivos", width/2,y+ 160);
+  text("orientada a las Tecnologías Web", width/2,y+ 185);
+
+  textSize(18);
+  text("Autoras de la obra:", width/2, y+230);
+
+  textSize(16);
+  text("Cardamon Gomez", width/2,y+ 260);
+  text("Legajo: 127458/3", width/2,y+285);
+
+  text("Fiorella Jazmín Furnel", width/2, y+320);
+  text("Legajo: 125577/0", width/2, y+345);
+
+  text("Comisión 3", width/2,y+ 385);
+  text("Docente: David Bedoian", width/2,y+ 415);
+posicionCreditos=posicionCreditos-2;
+if(posicionCreditos<-400){
+  posicionCreditos=500;
+}
 }
 
 function dibujarHistoria() {
