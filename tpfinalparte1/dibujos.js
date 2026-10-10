@@ -1,27 +1,32 @@
 function dibujarPantallaInicio() {
   image(imgInicio, 0, 0);
-  noFill();
+  fill(amarillo);
+  noStroke();
   beginShape();
   for (let i = 0; i < botonComenzar.vertices.length; i++) {
     vertex(botonComenzar.vertices[i].x, botonComenzar.vertices[i].y);
   }
   endShape(CLOSE);
-  fill(0);
+  fill(marron);
   textAlign(CENTER, CENTER);
   textSize(30);
   text(botonComenzar.texto, botonComenzar.xTxComenzar, botonComenzar.yTxComenzar);
+  textSize(45);
+  text("Un dia en la vida de una abeja", width/2, height/2);
+}
+
+function dibujarPantallaCreditos() {
+  image(imgCreditos, 0, 0, width, height);
 }
 
 function dibujarHistoria() {
   let nodo = estadoActual;
-  //IMAGENES
   for (let i= 0; i<= 13; i++) {
     if (nodo== i) {
       image(img[i], 0, 0, width, height);
     }
   }
 
-  //FONDO BOTON AMARILLO  TEXTO MARRON DIBUJO
   if (nodo !== -1|-2) {
     fill(amarillo);
     noStroke();
@@ -36,7 +41,7 @@ function dibujarHistoria() {
     textAlign(CENTER, CENTER);
     text(historia[nodo].texto, boton.xTexto, boton.yTexto, boton.ancho, boton.largo);
   }
-  //BOTON UNICO DIBUJO
+
   if (nodo === 0 || nodo === 2 || nodo===6 || nodo===10 || nodo===12) {
     fill(marron);
     noStroke();
@@ -53,7 +58,6 @@ function dibujarHistoria() {
     text(historia[nodo].unicaOpcion.texto, botonUnico.xTexto, botonUnico.yTexto, botonUnico.ancho, botonUnico.largo);
   }
 
-  //BOTONES DOS OPCIONES
   if (nodo==1 || nodo== 3|| nodo===5||nodo===7||nodo===8||nodo===9||nodo===11||nodo===13) {
     //BOTON A
     fill(marron);
@@ -69,9 +73,7 @@ function dibujarHistoria() {
       stroke(3);
     textAlign(CENTER, CENTER);
     text(historia[nodo].opcionA.texto, botonA.xTexto, botonA.yTexto, botonA.ancho, botonA.largo);
-
     //BOTON B
-
     fill(marron);
     noStroke();
     beginShape();
@@ -88,7 +90,7 @@ function dibujarHistoria() {
   }
 
   if ( nodo===4) {
-    //bton C
+    //BOTON C
     fill(marron);
     noStroke();
     beginShape();
@@ -103,7 +105,7 @@ function dibujarHistoria() {
     textAlign(CENTER, CENTER);
     text(historia[nodo].opcionC.texto, botonC.xTexto, botonC.yTexto, botonC.ancho, botonC.largo);
 
-    //boton D
+    //BOTON D
     fill(marron);
     noStroke();
     beginShape();

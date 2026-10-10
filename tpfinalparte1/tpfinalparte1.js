@@ -1,8 +1,10 @@
 const pantallaInicio = -1;
+const pantallaCreditos =-2
 let estadoActual = pantallaInicio;
 
 let img=[];
 let imgInicio;
+let imgCreditos;
 
 let botonComenzar;
 let botonA;
@@ -21,6 +23,7 @@ diccionarioDeHistoria();
 
 function preload() {
   imgInicio = loadImage("assets/img-1.jpg");
+  imgCreditos= loadImage ("assets/img-2.jpeg");
   for ( let i =0;i <= 13; i++){
     let path= "assets/img" + i +".jpeg";
     img[i]= loadImage(path);
@@ -42,6 +45,8 @@ function draw() {
   // 
   if (estadoActual == pantallaInicio) {
     dibujarPantallaInicio();
+  } else if (estadoActual== pantallaCreditos){
+    dibujarPantallaCreditos();
   } else {
   dibujarHistoria();
   }
@@ -54,6 +59,8 @@ function draw() {
   text(mouseX+","+ mouseY, 0, 20);
   pop();
 }
+
+
 
 function mousePressed() {
   if (estadoActual === pantallaInicio) {
